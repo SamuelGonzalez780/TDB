@@ -5,6 +5,7 @@ from index import Index
 
 
 #TODO QUE EL USUARIO CON PUESTO B NO DEJE ENTRAR AL SISTEMA
+#TODO QUE LA CONTRASEÑA O EL USUARIO ESTEN INCORRECTOS MARCAR ERRROR
 
 class Login(CTk):
     def __init__(self):
