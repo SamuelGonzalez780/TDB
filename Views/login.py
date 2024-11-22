@@ -1,11 +1,11 @@
 from customtkinter import *
 from tkinter import messagebox
-from Tools.ctrl import loadImages
+from Tools.ctrl import loadIcon
 from index import Index
 
 
 #TODO QUE EL USUARIO CON PUESTO B NO DEJE ENTRAR AL SISTEMA
-#TODO QUE LA CONTRASEÑA O EL USUARIO ESTEN INCORRECTOS MARCAR ERRROR
+#TODO HACER QUE ARROJE LOS DATOS DE CADA SUCURSAL POR MEDIO DEL RFC DEL EMPLEADO
 
 class Login(CTk):
     def __init__(self):
@@ -29,11 +29,11 @@ class Login(CTk):
     def _show(self, event):
         if self.stateUnShow:
             self.entryPwd.configure(show='')
-            self.lblShow.configure(image=loadImages('../Media/unShow.png', 20))
+            self.lblShow.configure(image=loadIcon('../Media/unShow.png', 20))
             self.stateUnShow = False
         else:
             self.entryPwd.configure(show='•')
-            self.lblShow.configure(image=loadImages("../Media/show.png", 20))
+            self.lblShow.configure(image=loadIcon("../Media/show.png", 20))
             self.stateUnShow = True
 
     def _enter(self, event):
@@ -60,7 +60,7 @@ class Login(CTk):
             self.windIndex.title('Corazón de canela ')
             self.windIndex.geometry(f'{self.winfo_screenwidth()}x{self.winfo_screenheight()}')
             self.frameIndex = CTkFrame(self.windIndex)
-            self.frameIndex.pack(fill=BOTH, expand=True)
+            self.frameIndex.pack(fill=BOTH, expand=1)
             Index(self.frameIndex)
 
     def _elementsLogin(self):
@@ -82,7 +82,7 @@ class Login(CTk):
                                  border_color='#dcdde1')
         self.entryPwd.pack()
 
-        self.lblShow = CTkLabel(self.contLogin, text='', image=loadImages('../Media/show.png', 20))
+        self.lblShow = CTkLabel(self.contLogin, text='', image=loadIcon('../Media/show.png', 20))
         self.lblShow.pack()
 
         self.btnLogin = CTkButton(self.contLogin, text='Login', font=('Verdana', 15, 'bold'), width=400, height=50,
