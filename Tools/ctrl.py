@@ -48,14 +48,20 @@ def decrease(btn, color, image):
 def searchImage():
     tempPath = filedialog.askopenfile()
     if tempPath is None:
-        messagebox.showwarning('Selecccione un archivo valido')
-        searchImage()
+        messagebox.showwarning('Cancelado', message='Cancelado')
     else:
         return tempPath.name
 
 
-def save_image(path):
+def moveImage(path):
     shutil.move(path, '../Media')
+
+
+def renameImage(path, id):
+    a, b = os.path.splitext(os.path.basename(path))
+    oldName = a + b
+    newName = f'{id}{b}'
+    os.rename(f'../Media/{oldName}', f'../Media/{newName}')
 
 
 def upper(entry):
