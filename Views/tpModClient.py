@@ -61,7 +61,7 @@ class ModClient(CTkToplevel):
                                                                                                    padx=20, sticky=W)
         self.cmbxSex = CTkComboBox(self, values=['Masculino', 'Femenino'], font=('Verdana', 15, 'italic'),
                                    bg_color='#dcdde1')
-        self.cmbxSex.grid(column=1, row=6, padx=20, pady=10)
+        self.cmbxSex.grid(column=1, row=6, padx=20, pady=10, sticky=N)
 
         self.btnCancel = CTkButton(self, text="Cancelar", fg_color='#0652DD', font=('Verdana', 15),
                                    hover_color='#eb2f06', text_color='#dcdde1', command=self._onCancel)

@@ -28,13 +28,14 @@ class Order(CTkToplevel):
         self.buttonFrame = CTkFrame(self)
         self.buttonFrame.pack(pady=10)
 
-        self.btnBuy = CTkButton(self.buttonFrame, text="Comprar", fg_color='#0652DD', hover_color='#4cd137',
-                                state=DISABLED, command=self._onOk)
-        self.btnBuy.pack(side="left", padx=5)
-
         self.btnCancel = CTkButton(self.buttonFrame, text="Cancelar", fg_color='#0652DD', hover_color='#eb2f06',
                                    command=self._onCancel)
-        self.btnCancel.pack(side="right", padx=5)
+        self.btnCancel.pack(side=LEFT, padx=5)
+
+        self.btnBuy = CTkButton(self.buttonFrame, text="Comprar", fg_color='#0652DD', hover_color='#4cd137',
+                                state=DISABLED, command=self._onOk)
+        self.btnBuy.pack(side=RIGHT, padx=5)
+
 
         self.amount = None
         self.charge = None
